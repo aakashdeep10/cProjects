@@ -18,10 +18,10 @@ if (arr[i] % 2 == 0) : This will check the number is even or not using the modul
                         operation is a constant time operation. So the time complexity for this is O(n).
 
 ++count : This will increment the count variable by 1 if the number is even. This is also a constant time 
-            operation so its time complexity is also O(n).
+            operation so its time complexity is also O(1).
 
 return count : This will return the total number of elements in the array. This is again a constant time
-                operation so its time complexity is O(n).
+                operation so its time complexity is O(1).
 
 Therefore, the overall time complexity is O(n)
 
@@ -56,14 +56,14 @@ int main(void)
 	 struct Vec3 v1, v2, v3, v4;
 
     // Set values for the first two vectors
-    vec3_Set(&v1, 1.0f, 2.0f, 3.0f);
-    vec3_Set(&v2, 4.0f, 5.0f, 6.0f);
+    vec3_Set(&v1, 1.0, 2.0, 3.0);
+    vec3_Set(&v2, 4.0, 5.0, 6.0);
 
     // Add v1 and v2, store the result in v3
     vec3_Add(&v1, &v2, &v3);
 
     // Multiply v3 by a scalar and store the result in v4
-    vec3_SMul(&v3, 2.0f, &v4);
+    vec3_SMul(&v3, 3.0, &v4);
 
     // Print all four vectors
     printf("Vector 1:\n");
@@ -75,7 +75,7 @@ int main(void)
     printf("Result of Vector 1 + Vector 2 (stored in Vector 3):\n");
     vec3_Print(&v3);
 
-    printf("Result of Vector 3 multiplied by 2 (stored in Vector 4):\n");
+    printf("Result of Vector 3 multiplied by 3 (stored in Vector 4):\n");
     vec3_Print(&v4);
 
 	return 0;
@@ -98,7 +98,7 @@ void vec3_Zero(struct Vec3 *v) {
 };
 
 void vec3_Print(const struct Vec3 *v) {
-    printf("Vec3: [x = %.2f, y = %.2f, z = %.2f]\n", v->x, v->y, v->z);
+    printf("[x = %.2f, y = %.2f, z = %.2f]\n", v->x, v->y, v->z);
 };
 
 void vec3_Add(const struct Vec3 *v1, const struct Vec3 *v2, struct Vec3 *v3) {
