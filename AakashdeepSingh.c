@@ -6,9 +6,24 @@
 * Student ID: 991715817
 *
 ******************************************************/
-/*---------------Part 1:Algorthm Analysis----------------
+/*---------------Part 1:Algorithm Analysis----------------
 
+int count = 0 : This line initializes the integer value count to 0.
+                Therefore the time complexity of this is O(1).
 
+for (int i = 0; i < n; i++) : This is the for loop which starts from 0 and runs till n times.
+                               So, the time complexity for this should be O(n).
+
+if (arr[i] % 2 == 0) : This will check the number is even or not using the modulus operator. The modulos 
+                        operation is a constant time operation. So the time complexity for this is O(n).
+
+++count : This will increment the count variable by 1 if the number is even. This is also a constant time 
+            operation so its time complexity is also O(n).
+
+return count : This will return the total number of elements in the array. This is again a constant time
+                operation so its time complexity is O(n).
+
+Therefore, the overall time complexity is O(n)
 
 */
 //-----------------------------Part 2------------------------
@@ -30,8 +45,6 @@ void vec3_SMul(const struct Vec3 *,float ,struct Vec3 *);
 *
 *******************************************************/
 
-
-
 // main program
 int main(void)
 {
@@ -49,7 +62,7 @@ int main(void)
     // Add v1 and v2, store the result in v3
     vec3_Add(&v1, &v2, &v3);
 
-    // Multiply v3 by a scalar (for example, 2) and store the result in v4
+    // Multiply v3 by a scalar and store the result in v4
     vec3_SMul(&v3, 2.0f, &v4);
 
     // Print all four vectors
@@ -99,10 +112,4 @@ void vec3_SMul(const struct Vec3 *v, float scalar, struct Vec3 *result) {
     result->y = v->y * scalar;
     result->z = v->z * scalar;
 };
-
-
-
-
-
-
 
